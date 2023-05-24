@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="../assets/img/paws.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="./juguetes.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/juguetes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-lg d-flex justify-content-center col-12">
             <div class="container-fluid justify-content-between">
 
-                <img src="../assets/img/logo.png" alt="logo" class="mw-25 mh-25">
+                <img src="../img/img/logo.png" alt="logo" class="mw-25 mh-25">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +45,7 @@
                                 href="./contacto.html">Contacto</a>
                         </li>
                     </ul>
-                    <img src="../assets/img/1170627.png" class="navbar-toggler-icon mw-25 mh-25" type="button">
+                    <img src="../img/img/1170627.png" class="navbar-toggler-icon mw-25 mh-25" type="button">
 
                 </div>
             </div>
@@ -73,6 +73,9 @@
                 </div>
             </div>
         </div>
+        <div v-else-if="juguetesFiltrados.disponibles < 5">
+
+        </div>
         
 
         <section v-else="">
@@ -80,11 +83,11 @@
         </section>
     </main>
 
-    <footer class="d-flex justify-content-between mt-3">
+    <footer class="d-flex flex-sm-column justify-content-between mt-3 ">
         <div class="redes d-flex justify-content-evenly gap-4 ms-2 ">
-            <img src="../assets/img/ig logo.png" alt="ig logo">
-            <img src="../assets/img/fb logo.png" alt="fb logo">
-            <img src="../assets/img/wp logo.png" alt="wp logo">
+            <img src="../img/img/ig logo.png" alt="ig logo">
+            <img src="../img/img/fb logo.png" alt="fb logo">
+            <img src="../img/img/wp logo.png" alt="wp logo">
         </div>
         <article class="d-flex flex-column align-items-center justify-content-center me-3">
             <h5>Micaela Gonzalez Pili, Lucas Correa, Franco Palacios, Eduardo Oriolani, Jhosselin Vilchez</h5>
@@ -96,7 +99,7 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./juguetes.js"> </script>
+    <script src="./js/juguetes.js"> </script>
 </body>
 
 </html>

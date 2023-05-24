@@ -25,6 +25,7 @@ const app = createApp({
                 this.juguetesPocasU = this.juguetes.filter(e=> e.disponibles < 5)
                 console.log(this.juguetesPocasU);
                 
+                
             })
             .catch(error => { console.log(error) })
     },

@@ -8,6 +8,7 @@ const app = createApp({
             juguetes: [],
             juguetesFiltrados: [],
             textoIngresado: "",
+            juguetesPocasU: [],
 
         }
     },
@@ -21,9 +22,9 @@ const app = createApp({
                 console.log(this.infoData);
                 this.juguetes = this.infoData.filter(e => e.categoria == "jugueteria")
                 console.log(this.juguetes);
-
-
-
+                this.juguetesPocasU = this.juguetes.filter(e=> e.disponibles < 5)
+                console.log(this.juguetesPocasU);
+                
             })
             .catch(error => { console.log(error) })
     },

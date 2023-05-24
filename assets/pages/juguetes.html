@@ -25,7 +25,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <h1>El Club de las Mascotas</h1>
+                <h1>El Club de las Mascotas</h1>                
                 <div class="collapse navbar-collapse flex-grow-0 justify-content-center align-items-center "
                     id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
@@ -54,6 +54,7 @@
     </header>
     
     <main id="app" class="d-flex flex-column justify-content-center">
+        <h2 class="text-center">Juguetes</h2>
       {{filtroTexto}}
         <nav class="navbar navbar-light d-flex align-items-center justify-content-center mb-3">
             <form class="d-flex ">
@@ -62,36 +63,42 @@
             </form>
           </nav >
         
-        <div v-if="juguetesFiltrados !=0 " id="contenedorJuguetes" class="col-8 d-flex flex-wrap text-center justify-content-center align-self-center gap-3">
-            <div class="card d-flex flex-column justify-content-between object-fit-cover " style="width: 18rem;" v-for="juguete of juguetesFiltrados">
+        <div v-if="juguetesFiltrados !=0" id="contenedorJuguetes" class="col-8 d-flex flex-wrap text-center justify-content-center align-self-center gap-3">
+            <div class="card d-flex flex-column justify-content-between object-fit-cover align-items-strech " style="width: 18rem;" v-for="juguete of juguetesFiltrados">
                 <img :src="juguete.imagen" class="card-img-top object-fit-cover " :alt="juguete.nombre">
                 <div class="card-body flex-column justify-content-between">
-                <h5 class="card-title">{{juguete.nombre}}</h5>
-                <h5 class="card-text">{{juguete.producto}}</h5>
-                <p class="card-text">${{juguete.precio}}</p>
-               <a v-bind:href="'./details.html?_id='+juguete._id"class="myButton mt-3">Ver mas</a>     
+                    <div class="cardtoy">
+                      <h5 class="card-title">{{juguete.producto}}</h5>
+                      <p class="card-text">${{juguete.precio}}</p>
+                      <p v-if="juguete.disponibles < 5" class="text-danger"> ultimas unidades!</p>      
+                    </div>               
+                
+                <div class="d-flex justify-content-evenly">
+                  <a v-bind:href="'./details.html?_id='+juguete._id"class="myButton mt-3 ">Ver mas</a>   
+               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+              </svg>   
+                </div>
+                
                 </div>
             </div>
         </div>
-        <div v-else-if="juguetesFiltrados.disponibles < 5">
-
-        </div>
-        
+              
 
         <section v-else="">
             <h4 class="text-center">No se encontraron coincidencias en su busqueda.</h4>
         </section>
     </main>
 
-    <footer class="d-flex flex-sm-column justify-content-between mt-3 ">
-        <div class="redes d-flex justify-content-evenly gap-4 ms-2 ">
+    <footer class="d-flex justify-content-between mt-3 ">
+        <div class="redes d-flex justify-content-evenly gap-4 ms-2 mt-3">
             <img src="../img/img/ig logo.png" alt="ig logo">
             <img src="../img/img/fb logo.png" alt="fb logo">
             <img src="../img/img/wp logo.png" alt="wp logo">
         </div>
-        <article class="d-flex flex-column align-items-center justify-content-center me-3">
-            <h5>Micaela Gonzalez Pili, Lucas Correa, Franco Palacios, Eduardo Oriolani, Jhosselin Vilchez</h5>
-            <h5 class="align-self-center">Cohort 47</h5>
+        <article class="d-flex flex-column align-items-center justify-content-center mt-3">
+            <h6>Micaela Gonzalez Pili, Lucas Correa, Franco Palacios, Eduardo Oriolani, Jhosselin Vilchez</h6>
+            <h6 class="align-self-center">Cohort 47</h6>
         </article>
     </footer>
 

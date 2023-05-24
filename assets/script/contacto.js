@@ -7,4 +7,5 @@ function enviarFormulario() {
 function cerrarModal() {
   // Cerrar la ventana emergente
   document.getElementById('myModal').style.display = 'none';
+  window.location.href = "inicio.html"
 }

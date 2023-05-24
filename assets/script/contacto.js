@@ -1,5 +1,10 @@
 const button = document.getElementById("button")
-button.onclick = () => {
-    alert("Muchas gracias, su comentario fue enviado");
-    window.location.href = "inicio.html"
-  };
+function enviarFormulario() {
+  // Mostrar la ventana emergente
+  document.getElementById('myModal').style.display = 'block';
+}
+
+function cerrarModal() {
+  // Cerrar la ventana emergente
+  document.getElementById('myModal').style.display = 'none';
+}

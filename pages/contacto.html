@@ -96,10 +96,20 @@
                     <label for="comentario">
                         <textarea name="comentario" id="comentario" cols="30" rows="5" placeholder="Me gustó mucho este comercio, mi mascota lo agradece!"></textarea>
                     </label>
-                    <div class="col-md-3 col-sm-3 col-xs-6 mb-2"> <a href="#" class="btn btn-sm animated-button thar-one" id="button">Enviar</a> </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 mb-2">
+                        <a href="#" class="btn btn-sm animated-button thar-one" id="button" onclick="enviarFormulario()">Enviar</a>
+                      </div>
+                      
                 </fieldset>
 
             </form>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close" onclick="cerrarModal()">&times;</span>
+                  <p>Gracias por enviar tu comentario. Nos pondremos en contacto contigo pronto.</p>
+                </div>
+              </div>
+              
         </section>
     </main>
 

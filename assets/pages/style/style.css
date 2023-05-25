@@ -52,10 +52,20 @@ footer{
 .carousel-inner img {
     height: 50vh;
     object-fit: cover;
-    object-position: 50% 30%; /* Ajusta los valores según tus necesidades */
+    object-position: 50% 30%;
 }
 
 #imgServicios{
     height: 300px;
     width: 300px;
+    object-fit: cover;
+}
+
+
+#imagenCarousel{
+    object-fit: cover;
+    object-position: 50% 60%;
+}
+h1, h5{
+    font-family: 'Chewy', cursive;
 }

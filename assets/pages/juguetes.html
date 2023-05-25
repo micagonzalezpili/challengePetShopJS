@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Club de las Mascotas | Juguetes</title>
+    <link rel="shortcut icon" href="../assets/img/paws.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/juguetes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <header class="back">
+            <nav class="navbar navbar-expand-lg d-flex justify-content-center col-12">
+                <div class="container-fluid justify-content-between">
+
+                    <img src="../img/img/logo.png" alt="logo" class="mw-25 mh-25">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <h1>El Club de las Mascotas</h1>
+                    <div class="collapse navbar-collapse flex-grow-0 justify-content-center align-items-center "
+                        id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active boton4 rounded" aria-current="page"
+                                    href="./inicio.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active boton4 rounded" aria-current="page"
+                                    href="./farmacia.html">Farmacia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active boton4 rounded" aria-current="page" href="#">Juguetes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active boton4 rounded" aria-current="page"
+                                    href="./contacto.html">Contacto</a>
+                            </li>
+                        </ul>
+                            <a href="./carrito.html"><img src="../img/img/1170627.png" class="w-25"></a>
+                            <p class="contador">{{cartCount}}</p>
+                        
+                            
+                    </div>
+                </div>
+            </nav>
+            <!-- <img src="../assets/img/border-removebg-preview.png" alt="" id="borde"> -->
+        </header>
+
+        <main class="d-flex flex-column justify-content-center">
+            {{filtroTexto}}
+            <nav class="navbar navbar-light d-flex align-items-center justify-content-center mb-3">
+                <form class="d-flex ">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"
+                        v-model="textoIngresado">
+                    <button class="btn btn-outline-success my-2 my-sm-0 ms-3 " type="button">Search</button>
+                </form>
+            </nav>
+
+            <div v-if="juguetesFiltrados !=0 " id="contenedorJuguetes"
+                class="col-8 d-flex flex-wrap text-center justify-content-center align-self-center gap-3">
+                <div class="card d-flex flex-column justify-content-between object-fit-cover " style="width: 18rem;"
+                    v-for="juguete of juguetesFiltrados">
+                    <img :src="juguete.imagen" class="card-img-top object-fit-cover " :alt="juguete.nombre">
+                    <div class="card-body flex-column justify-content-between">
+                        <h5 class="card-title">{{juguete.nombre}}</h5>
+                        <h5 class="card-text">{{juguete.producto}}</h5>
+                        <p class="card-text">${{juguete.precio}}</p>
+                        <p class="card-text" id="stock">{{juguete.disponibles}}</p>
+                        <a v-bind:href="'./details.html?_id=' + juguete._id" class="myButton mt-3">Ver mas</a>
+                        <button @click="añadirCarrito(juguete.id)">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div v-else-if="juguetesFiltrados.disponibles < 5">
+            </div>
+
+
+            <section v-else="">
+                <h4 class="text-center">No se encontraron coincidencias en su busqueda.</h4>
+            </section>
+        </main>
+
+        <footer class="d-flex flex-sm-column justify-content-between mt-3 ">
+            <div class="redes d-flex justify-content-evenly gap-4 ms-2 ">
+                <img src="../img/img/ig logo.png" alt="ig logo">
+                <img src="../img/img/fb logo.png" alt="fb logo">
+                <img src="../img/img/wp logo.png" alt="wp logo">
+            </div>
+            <article class="d-flex flex-column align-items-center justify-content-center me-3">
+                <h5>Micaela Gonzalez Pili, Lucas Correa, Franco Palacios, Eduardo Oriolani, Jhosselin Vilchez</h5>
+                <h5 class="align-self-center">Cohort 47</h5>
+            </article>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../assets/script/juguetes.js"></script>
+</body>
+
+</html>

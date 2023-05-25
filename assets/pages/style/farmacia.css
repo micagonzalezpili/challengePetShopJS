@@ -14,13 +14,10 @@ body{
 }
 
 .card-body{
-	background-color: #c584f3;
 }
 .card-text{
- background-color: rgb(11, 98, 173);
 }
 .ahref{
-	background-color: aqua;
 }
 .myButton {
 	box-shadow:inset 0px 1px 0px 0px #e5b6fc;

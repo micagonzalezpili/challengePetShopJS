@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetShop | Inicio</title>
+
     <link rel="shortcut icon" href="./assets/img/img/paws.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/pages/style/style.css">
+    <link rel="stylesheet" href="./assets/pages/style/style.css">    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Quicksand:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -21,12 +25,15 @@
             <div class="container-fluid justify-content-between">
 
                 <img src="./assets/img/img/logo.png" alt="logo" class="mw-25 mh-25">
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <h1>El Club de las Mascotas</h1>
+
                 <div class="collapse navbar-collapse flex-grow-0 justify-content-center align-items-center "
                     id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
@@ -35,15 +42,14 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active boton4 rounded" aria-current="page"
-                                href="./assets/pages/farmacia.html">Farmacia</a>
+                                href="./farmacia.html">Farmacia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active boton4 rounded" aria-current="page" href="#">Juguetes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active boton4 rounded" aria-current="page"
-                                href="./assets/pages/juguetes.html">Juguetes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active boton4 rounded" aria-current="page"
-                                href="./assets/pages/contacto.html">Contacto</a>
+                                href="./contacto.html">Contacto</a>
                         </li>
                     </ul>
                     <img src="./assets/img/img/1170627.png" class="navbar-toggler-icon mw-25 mh-25" type="button">
@@ -54,7 +60,6 @@
         <!-- <img src="../assets/img/border-removebg-preview.png" alt="" id="borde"> -->
     </header>
     <main>
-
         <!-- Carousel -->
         <div id="carouselExampleCaptions" class="carousel slide min-vh-25" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -65,6 +70,16 @@
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner h-30">
+                <div class="carousel-item">
+                    <img src="./assets/img/img/perros-y-gatos-mirando-hacia-arriba-en-un-banner-web-155962083.jpg" class="d-block w-100" alt="michismirando" id="imagenCarousel">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/img/banner_2.png" class="d-block w-100" alt="banner_2" id="imagenCarousel">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
                 <div class="carousel-item active">
                     <img src="./assets/img/img/perritos.jpg" class="d-block w-100" alt="perritos">
                     <div class="carousel-caption d-none d-md-block">
@@ -81,17 +96,8 @@
                     <img src="./assets/img/img/gato2.jpg" class="d-block w-100" alt="michi Nico">
                     <div class="carousel-caption d-none d-md-block">
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/img/img/banner_2.png" class="d-block w-100" alt="banner_2" id="imagenCarousel">
-                    <div class="carousel-caption d-none d-md-block">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/img/img/perros-y-gatos-mirando-hacia-arriba-en-un-banner-web-155962083.jpg" class="d-block w-100" alt="michismirando" id="imagenCarousel">
-                    <div class="carousel-caption d-none d-md-block">
-                    </div>
-                </div>
+                </div>               
+                
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -122,11 +128,11 @@
         
         <!-- Servicios PetShop -->
         <div class="container">
-             <h1 class="text-center mt-5">Servicios que ofrecemos</h1>
+             <h1 class="text-center mt-5" >Servicios que ofrecemos</h1>
             <div class="row mt-4">
               <div class="col-md-6 d-flex align-items-center justify-content-center">
                 <div class="text-center">
-                  <p class="text-dark fs-5">Peluquería Canina</p>
+                  <p class="text-dark fs-5" id="peluqueria">Peluquería Canina</p>
                 </div>
               </div>
               <div class="col-md-6 d-flex align-items-center justify-content-center">
@@ -160,9 +166,12 @@
     </main>
     <footer class="d-flex justify-content-between mt-3">
         <div class="redes d-flex justify-content-evenly gap-4 ms-2 ">
+
             <img src="./assets/img/img/ig logo.png" alt="ig logo">
             <img src="./assets/img/img/fb logo.png" alt="fb logo">
             <img src="./assets/img/img/wp logo.png" alt="wp logo">
+
+
         </div>
         <article class="d-flex flex-column align-items-center justify-content-center me-3">
             <h5>Micaela Gonzalez Pili, Lucas Correa, Franco Palacios, Eduardo Oriolani, Jhosselin Vilchez</h5>

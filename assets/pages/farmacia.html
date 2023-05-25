@@ -68,11 +68,16 @@
                         <h5 class="card-title">{{medicamento.nombre}}</h5>
                         <h5 class="card-text">{{medicamento.producto}}</h5> 
                         <p class="card-text">${{medicamento.precio}}</p>
-                        <p v-if="medicamento.disponibles < 5 && medicamento.disponibles > 0 " class="text-danger"> ultimas unidades!</p>
+                        <!-- <div class="stock">
+                            <p v-if="medicamento.disponibles < 5 && medicamento.disponibles > 0 " class="text-danger"> ultimas unidades!</p>
+                        </div> -->
                     </div>
                     <div class="ahref">
                         <a v-bind:href="'./details.html?_id='+medicamento._id"class="myButton mt-3"class="myButton mt-3">Ver mas</a>     
                     </div>
+                </div>
+                <div >
+                    <p class="stock" v-if="medicamento.disponibles < 5 && medicamento.disponibles > 0 " > ultimas unidades!</p>
                 </div>
             </div>
             <section v-else="">

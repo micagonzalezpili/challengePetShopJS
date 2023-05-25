@@ -10,16 +10,17 @@ body{
 }
 .card img{
     width: 95%;
-    min-height: 50vh;
+	height: 15rem;
 }
+
 .card-body{
-    max-height: 50vh;
+	background-color: #c584f3;
 }
 .card-text{
- min-height: 3rem;
+ background-color: rgb(11, 98, 173);
 }
 .ahref{
-    min-height: 3rem;
+	background-color: aqua;
 }
 .myButton {
 	box-shadow:inset 0px 1px 0px 0px #e5b6fc;
@@ -45,3 +46,27 @@ body{
 	position:relative;
 	top:1px;
 }
+#card:hover{
+    box-Shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    transform : scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+  #card:hover{
+    box-Shadow:'0px 0px 20px rgba(0, 0, 0, 0.2)';
+    transform: 'scale(1)';
+    transition: 'all 0.3s ease';
+  }
+
+
+  #articleCard:hover{
+    box-Shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    transform : scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+  #articleCard:hover{
+    box-Shadow:'0px 0px 20px rgba(0, 0, 0, 0.2)';
+    transform: 'scale(1)';
+    transition: 'all 0.3s ease';
+  }

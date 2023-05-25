@@ -13,12 +13,12 @@ body{
 	height: 15rem;
 }
 
-.card-body{
+/* .card-body{
 }
 .card-text{
 }
 .ahref{
-}
+} */
 .myButton {
 	box-shadow:inset 0px 1px 0px 0px #e5b6fc;
 	background:linear-gradient(to bottom, #b5d0ff 5%, #fab4b4 100%);

@@ -7,19 +7,11 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 .card img{
     width: 95%;
-    min-height: 50vh;
-}
-.card-body{
-    max-height: 50vh;
-}
-.card-text{
- min-height: 3rem;
-}
-.ahref{
-    min-height: 3rem;
+	height: 15rem;
 }
 .myButton {
 	box-shadow:inset 0px 1px 0px 0px #e5b6fc;
@@ -45,3 +37,40 @@ body{
 	position:relative;
 	top:1px;
 }
+.stock{
+  position: absolute;
+  border: 1px solid rgb(238, 65, 120);
+  border-radius: 20px;
+  right: 0.3rem;
+  top: 0.3rem;
+  background-color: rgb(238, 65, 120);
+  color: white;
+  height: 3rem;
+  width: 6rem;
+  font-size: 14;
+
+}
+#card:hover{
+    box-Shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    transform : scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+  #card:hover{
+    box-Shadow:'0px 0px 20px rgba(0, 0, 0, 0.2)';
+    transform: 'scale(1)';
+    transition: 'all 0.3s ease';
+  }
+
+
+  #articleCard:hover{
+    box-Shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    transform : scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+  #articleCard:hover{
+    box-Shadow:'0px 0px 20px rgba(0, 0, 0, 0.2)';
+    transform: 'scale(1)';
+    transition: 'all 0.3s ease';
+  }

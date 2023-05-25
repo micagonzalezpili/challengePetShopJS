@@ -34,7 +34,7 @@
                     id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active boton4 rounded" aria-current="page" href="./inicio.html">Inicio</a>
+                            <a class="nav-link active boton4 rounded" aria-current="page" href="../../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active boton4 rounded" aria-current="page"
@@ -58,12 +58,12 @@
     </header>
 
     <main id="app" class="d-flex flex-column justify-content-center">
-        <h2 class="text-center">Juguetes</h2>
+        <!-- <h2 class="text-center">Juguetes</h2> -->
       {{filtroTexto}}
         <nav class="navbar navbar-light d-flex align-items-center justify-content-center mb-3">
             <form class="d-flex ">
               <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"  v-model="textoIngresado">
-              <button class="btn btn-outline-success my-2 my-sm-0 ms-3 " type="button">Search</button>
+              <button class="btn btn-outline-success my-2 my-sm-0 ms-3 " type="button">🔎</button>
             </form>
         </nav>
 
@@ -76,7 +76,7 @@
                     <div class="cardtoy">
                       <h5 class="card-title">{{juguete.producto}}</h5>
                       <p class="card-text">${{juguete.precio}}</p>
-                      <p class="card-text">{{juguete.disponibles}} unidad/es</p>
+                     <!--  <p class="card-text">{{juguete.disponibles}} unidad/es</p> -->
                       <p class="stock" v-if="juguete.disponibles < 5 " > ultimas unidades!</p>                         
                     </div>               
                 

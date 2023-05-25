@@ -72,3 +72,15 @@ h1, h5{
 #peluqueria, #guarderia{
     text-decoration: underline
 }
+
+#imgServicios:hover{
+    box-Shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    transform : scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+#imgServicios:hover{
+    box-Shadow:'0px 0px 20px rgba(0, 0, 0, 0.2)';
+    transform: 'scale(1)';
+    transition: 'all 0.3s ease';
+  }

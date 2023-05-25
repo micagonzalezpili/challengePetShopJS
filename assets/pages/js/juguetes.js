@@ -8,34 +8,51 @@ const app = createApp({
             juguetes: [],
             juguetesFiltrados: [],
             textoIngresado: "",
-            juguetesPocasU: [],
-
+            arrayCart: [],
+            cartCount: 0,
+            stockCount: ""
         }
     },
-
     created() { // LO QUE EJECUTO MIENTRAS LA APP ESTE CREADA
         const url = "https://mindhub-xj03.onrender.com/api/petshop"
         fetch(url)
             .then(res => res.json())
             .then(data => { 
                 this.infoData = data
-                console.log(this.infoData);
                 this.juguetes = this.infoData.filter(e => e.categoria == "jugueteria")
-                console.log(this.juguetes);
-                this.juguetesPocasU = this.juguetes.filter(e=> e.disponibles < 5)
-                console.log(this.juguetesPocasU);
-                
+                this.getLocalStorage()
+                this.arrayCart = this.getLocalStorage() ?? []
+                // this.stock()
+                this.añadirCarrito();
                 
             })
             .catch(error => { console.log(error) })
     },
-
     computed: {
         filtroTexto() {
             this.juguetesFiltrados = this.juguetes.filter(e => e.producto.toLowerCase().includes(this.textoIngresado.toLowerCase()))            
         },
-
+    },methods: {
+        añadirCarrito(id) {
+            const producto = this.juguetes.find((juguete) => juguete._id == id);
+            if (producto && !this.arrayCart.includes(producto)) {
+              this.arrayCart.push(producto);
+              const json = JSON.stringify(this.arrayCart);
+              localStorage.setItem("producto", json);
+              console.log(this.arrayCart);
+            }
+          },
+        getLocalStorage() {
+            return JSON.parse(localStorage.getItem("producto"))
+        },
+        // stock(){
+        //     if (this.juguetes.disponibles > this.arrayCart.disponibles) {
+        //         this.stockCount.textContent = this.juguetes.disponibles
+        //     }else{
+        //         const stock = document.getElementById("stock")
+        //         stock.textContent = "No hay mas unidades disponibles"
+        //     }
+        // }
     }
-
 })
 app.mount("#app")

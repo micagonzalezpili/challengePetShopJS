@@ -34,8 +34,7 @@
                     id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active boton4 rounded" aria-current="page"
-                                href="../../index.html">Inicio</a>
+                            <a class="nav-link active boton4 rounded" aria-current="page" href="./inicio.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active boton4 rounded" aria-current="page"
@@ -59,13 +58,12 @@
     </header>
 
     <main id="app" class="d-flex flex-column justify-content-center">
-        <!-- <h2 class="text-center">Juguetes</h2> -->
-        {{filtroTexto}}
+        <h2 class="text-center">Juguetes</h2>
+      {{filtroTexto}}
         <nav class="navbar navbar-light d-flex align-items-center justify-content-center mb-3">
             <form class="d-flex ">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"
-                    v-model="textoIngresado">
-                <button class="btn btn-outline-success my-2 my-sm-0 ms-3 " type="button">Search</button>
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"  v-model="textoIngresado">
+              <button class="btn btn-outline-success my-2 my-sm-0 ms-3 " type="button">Search</button>
             </form>
         </nav>
 
@@ -76,22 +74,19 @@
                 <img :src="juguete.imagen" class="card-img-top object-fit-cover " :alt="juguete.nombre">
                 <div class="card-body flex-column justify-content-between">
                     <div class="cardtoy">
-                        <h5 class="card-title">{{juguete.producto}}</h5>
-                        <p class="card-text">${{juguete.precio}}</p>
-                        <p class="card-text">{{juguete.disponibles}} unidad/es</p>
-                        <p v-if="juguete.disponibles < 5 && juguetes.disponibles > 0 " class="text-danger"> ultimas
-                            unidades!</p>
-                    </div>
-
-                    <div class="d-flex justify-content-evenly">
-                        <a v-bind:href="'./details.html?_id='+juguete._id" class="myButton mt-3 ">Ver mas</a>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" fill="currentColor"
-                            class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z" />
-                        </svg>
-                    </div>
-
+                      <h5 class="card-title">{{juguete.producto}}</h5>
+                      <p class="card-text">${{juguete.precio}}</p>
+                      <p class="card-text">{{juguete.disponibles}} unidad/es</p>
+                      <p v-if="juguete.disponibles < 5" class="text-danger"> ultimas unidades!</p>                            
+                    </div>               
+                
+                <div class="d-flex justify-content-evenly">
+                  <a v-bind:href="'./details.html?_id='+juguete._id"class="myButton mt-3 ">Ver mas</a>   
+               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+              </svg>   
+                </div>
+                
                 </div>
             </div>
         </div>

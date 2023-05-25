@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Club de las Mascotas | Juguetes</title>
-    <link rel="shortcut icon" href="../assets/img/paws.png" type="image/x-icon">
+    <title>PetShop | Farmacia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/juguetes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/farmacia.css">
+
 </head>
 <body>
     <header class="back">
@@ -34,7 +34,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active boton4 rounded" aria-current="page"
-                                href="./farmacia.html">Farmacia</a>
+                                href="#">Farmacia</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active boton4 rounded" aria-current="page"
@@ -46,37 +46,39 @@
                         </li>
                     </ul>
                     <img src="../img/img/1170627.png" class="navbar-toggler-icon mw-25 mh-25" type="button">
-
                 </div>
+
             </div>
         </nav>
-        <!-- <img src="../assets/img/border-removebg-preview.png" alt="" id="borde"> -->
     </header>
-    
-    <main id="app">
-        <div  class="d-flex col-12 mt-5 justify-content-center align-items-center" id="contedorDetails">
-            <div class="card mb-3 ms-4 d-flex col-12 justify-content-center align-items-center card border-warning mb-3 border border-3" style="background-color: #8688fd8e; max-width: 800px; height: 500px " v-show="juguetesId" >
-              <div class="row g-0 " >
-                <div class="col-md-4 align-self-center">
-                  <img :src="juguetesId.imagen" class="img-fluid rounded-start ms-3" :alt="juguetesId.producto">
+    <main id="app" class="d-flex flex-column justify-content-center">
+        {{filtroNombre}}
+        <nav class="navbar navbar-light d-flex align-items-center justify-content-center mb-3">
+            <form class="d-flex ">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"  v-model="nameSearch">
+              <button class="btn btn-outline-success my-2 my-sm-0 ms-3 " type="button">🔎</button>
+            </form>
+        </nav >
+        <div id="contenedorJuguetes" class="col-8 d-flex flex-wrap text-center justify-content-center align-self-center gap-3" >
+            <div class="card d-flex flex-column justify-content-between" style="width: 18rem;" v-if="medicamentosFiltrados !=0" v-for="medicamento of medicamentosFiltrados">
+                <img v-bind:src="medicamento.imagen" class="card-img-top object-fit-cover " v-bind:alt="medicamento.nombre">
+                <div class="card-body flex-column justify-content-around align-self-center">
+                    <div class="card-text">
+                        <h5 class="card-title">{{medicamento.nombre}}</h5>
+                        <h5 class="card-text">{{medicamento.producto}}</h5> 
+                        <p class="card-text">${{medicamento.precio}}</p>
+                    </div>
+                    <div class="ahref">
+                        <a v-bind:href="'./details.html?_id='+medicamento._id"class="myButton mt-3"class="myButton mt-3">Ver mas</a>     
+                    </div>
                 </div>
-                <div class="col-md-8 d-flex justify-content-evenly" style=" height: 500px">
-                  <div class="card-body align-self-center ms-3">
-                    <h5 class="card-title text-center mb-3 fs-3">{{juguetesId.producto}}</h5>
-                    <p class="card-text text-center">"{{juguetesId.descripcion}}"<br>
-                      ${{juguetesId.precio}}<br>
-                      Disponibles: {{juguetesId.disponibles}} unidades<br>                                            
-                      Precio: ${{juguetesId.precio}}<br>  
-                      <a href="#" class="myButton mt-3">Comprar</a>               
-                    </p>
-                   
-                  </div>
-                </div>
-              </div>
-              
             </div>
+            <section v-else="">
+                <h4 class="text-cent
+                er">No se encontraron coincidencias en su busqueda.</h4>
+            </section>
+        </div>
     </main>
-
     <footer class="d-flex justify-content-between mt-3">
         <div class="redes d-flex justify-content-evenly gap-4 ms-2 ">
             <img src="../img/img/ig logo.png" alt="ig logo">
@@ -88,12 +90,10 @@
             <h5 class="align-self-center">Cohort 47</h5>
         </article>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>    
-    <script src="../pages/js/details.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/farmacia.js"> </script>
 </body>
-
 </html>

@@ -7,12 +7,9 @@ const app = createApp({
             infoData: [],
             juguetesId: [],
             juguetes: [],
-           params: [],
-           dataParams: []
-            
-           
-
-
+            medicamentos: [],
+            params: [],
+            dataParams: []
         }
     },
 
@@ -23,15 +20,14 @@ const app = createApp({
             .then(data => {
                 this.infoData = data   
                 this.juguetes = this.infoData.filter(e => e.categoria == "jugueteria")             
+                this.medicamentos = this.infoData.filter(e => e.categoria == "farmacia")             
                 this.params = new URLSearchParams(location.search)
                 this.dataParams = this.params.get("_id")
-                this.juguetesId = this.juguetes.find(juguete => juguete._id == this.dataParams)
+                this.juguetesId = this.juguetes.find(juguete => juguete._id == this.dataParams) || this.medicamentos.find(medicamento => medicamento._id == this.dataParams )
+                console.log(this.juguetesId);
                 console.log(this.juguetesId);
                 console.log(this.dataParams);
                 console.log(this.params);
-
-
-
             })
             .catch(error => { console.log(error) })
     },

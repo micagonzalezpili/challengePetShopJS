@@ -66,10 +66,14 @@
                         <h5 class="card-text">{{juguete.producto}}</h5>
                         <p class="card-text">${{juguete.precio}}</p>
                         <!-- <a href="#" class="myButton mt-3 me-3">Comprar</a> -->
-                        <a href="#" class="myButton mt-3">Descartar</a>
+                        <a v-bind:href="'./details.html?_id='+juguete._id"class="myButton mt-3 ">Ver mas</a>                        
                     </div>
-                </div>
+                </div>                
             </div>
+            <div class="d-flex justify-content-center">
+              <a href="#"class="myButton mt-3"  >Finalizar compra</a>  
+            </div>
+            
     </main>
     <footer class="d-flex justify-content-between mt-3 ">
         <div class="redes d-flex justify-content-evenly gap-4 ms-2 mt-3">
@@ -77,7 +81,7 @@
             <img src="../img/img/fb logo.png" alt="fb logo">
             <img src="../img/img/wp logo.png" alt="wp logo">
         </div>
-        <article class="d-flex flex-column align-items-center justify-content-center mt-3" id="footerLetra">
+        <article class="d-flex flex-column align-self-center justify-content-center mt-3" id="footerLetra">
             <h6>Micaela Gonzalez Pili, Lucas Correa, Franco Palacios, Eduardo Oriolani, Jhosselhin Vilchez</h6>
             <h6 class="align-self-center">Cohort 47</h6>
         </article>

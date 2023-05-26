@@ -3,6 +3,10 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
+h6{
+  font-family: 'Chewy', cursive;
+}
+  
 .card{
     display: flex;
     flex-direction: column;

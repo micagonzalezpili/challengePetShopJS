@@ -10,7 +10,9 @@ const app = createApp({
             textoIngresado: "",
             arrayCart: [],
             cartCount: 0,
-            stockCount: ""
+            stockCount: "",
+            dataSet: [],
+            dataAccion: ""
         }
     },
     created() { // LO QUE EJECUTO MIENTRAS LA APP ESTE CREADA
@@ -45,6 +47,13 @@ const app = createApp({
         getLocalStorage() {
             return JSON.parse(localStorage.getItem("producto"))
         },
+        descartarCarrito(e){
+            this.dataSet = e.target.dataSet
+            console.log(this.dataSet);
+            if (this.dataAccion == "Descartar"){
+                this.arrayCart = this.arrayCart.filter(e=> e._id != this.dataSet._id)
+            }
+        }
         // stock(){
         //     if (this.juguetes.disponibles > this.arrayCart.disponibles) {
         //         this.stockCount.textContent = this.juguetes.disponibles

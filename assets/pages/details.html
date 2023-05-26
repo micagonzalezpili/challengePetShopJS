@@ -47,7 +47,7 @@
                                 href="./contacto.html">Contacto</a>
                         </li>
                     </ul>
-                    <img src="../img/img/1170627.png" class="navbar-toggler-icon mw-25 mh-25" type="button">
+                    <img src="../img/img/1170627.png" href="./carrito.html" class="navbar-toggler-icon mw-25 mh-25" type="button">
 
                 </div>
             </div>
@@ -69,7 +69,7 @@
                       ${{juguetesId.precio}}<br>
                       Disponibles: {{juguetesId.disponibles}} unidades<br>                                            
                       Precio: ${{juguetesId.precio}}<br>  
-                      <a href="#" class="myButton mt-3">Comprar</a>               
+                      <a href="#" class="myButton mt-3" @click="añadirCarrito(juguete._id)">Comprar</a>               
                     </p>
                    
                   </div>

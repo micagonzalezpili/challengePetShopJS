@@ -85,4 +85,8 @@ h1, h5{
     box-Shadow:'0px 0px 20px rgba(0, 0, 0, 0.2)';
     transform: 'scale(1)';
     transition: 'all 0.3s ease';
-  }
+  
+}
+/* #footerLetra, #titulo{
+    font-family: 'Chewy', cursive;
+} */

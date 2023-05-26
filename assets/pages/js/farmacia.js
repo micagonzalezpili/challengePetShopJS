@@ -1,40 +1,37 @@
-const { createApp } = Vue; // ACCEDL A LA PROP DEL OBJETO
-
+const {createApp} = Vue
 const app = createApp({
-
-    data() { // PROP REACTIVAS
+    data() { //REACTIVAS
         return {
-            infoData: [],
-            juguetes: [],
-            juguetesFiltrados: [],
-            textoIngresado: "",
+            arrayProductos: [],
+            medicamentos: [],
+            medicamentosFiltrados: [],
+            nameSearch: "",
             arrayCart: [],
             cartCount: 0,
-            stockCount: ""
+            stockCount:""
         }
     },
-    created() { // LO QUE EJECUTO MIENTRAS LA APP ESTE CREADA
-        const url = "https://mindhub-xj03.onrender.com/api/petshop"
-        fetch(url)
+    created(){ // LO QUE EJECUTO MIENTRAS LA APP ESTE CREADA
+        fetch("https://mindhub-xj03.onrender.com/api/petshop")
             .then(res => res.json())
             .then(data => { 
-                this.infoData = data
-                this.juguetes = this.infoData.filter(e => e.categoria == "jugueteria")
+                this.arrayProductos = data
+                this.medicamentos = this.arrayProductos.filter(producto => producto.categoria == "farmacia")
                 this.getLocalStorage()
                 this.arrayCart = this.getLocalStorage() ?? []
                 // this.stock()
                 this.añadirCarrito();
-                
             })
             .catch(error => { console.log(error) })
     },
     computed: {
-        filtroTexto() {
-            this.juguetesFiltrados = this.juguetes.filter(e => e.producto.toLowerCase().includes(this.textoIngresado.toLowerCase()))            
+        filtroNombre() {
+            this.medicamentosFiltrados = this.medicamentos.filter(card => card.producto.toLowerCase().includes(this.nameSearch.toLowerCase()))            
         },
-    },methods: {
+    },
+    methods: {
         añadirCarrito(id) {
-            const producto = this.juguetes.find((juguete) => juguete._id == id);
+            const producto = this.medicamentos.find((medicamento) => medicamento._id == id);
             if (producto && !this.arrayCart.includes(producto)) {
               this.arrayCart.push(producto);
               const json = JSON.stringify(this.arrayCart);
@@ -55,4 +52,4 @@ const app = createApp({
         // }
     }
 })
-app.mount("#app")
+app.mount(`#app`)

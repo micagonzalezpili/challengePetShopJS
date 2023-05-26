@@ -57,7 +57,7 @@
     </header>
     <main>
         <div v-if="arrayCart != 0" id="contenedorJuguetes"
-                class="col-8 d-flex flex-wrap text-center justify-content-center align-self-center gap-3">
+                class="col-12 d-flex flex-wrap text-center justify-content-center align-self-center gap-3">
                 <div class="card d-flex flex-column justify-content-between object-fit-cover " style="width: 18rem;"
                     v-for="juguete of arrayCart" :key="juguete._id">
                     <img :src="juguete.imagen" class="card-img-top object-fit-cover " :alt="juguete.nombre">
@@ -65,7 +65,8 @@
                         <h5 class="card-title">{{juguete.nombre}}</h5>
                         <h5 class="card-text">{{juguete.producto}}</h5>
                         <p class="card-text">${{juguete.precio}}</p>
-                        <a v-bind:href="'./details.html?_id=' + juguete._id" class="myButton mt-3">Ver mas</a>
+                        <a href="#" class="myButton mt-3 me-3">Comprar</a>
+                        <a href="#" class="myButton mt-3">Descartar</a>
                     </div>
                 </div>
             </div>

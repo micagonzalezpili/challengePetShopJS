@@ -76,7 +76,7 @@
                       <h5 class="card-title">{{juguete.producto}}</h5>
                       <p class="card-text">${{juguete.precio}}</p>
                       <p class="card-text">{{juguete.disponibles}} unidad/es</p>
-                      <p v-if="juguete.disponibles < 5" class="text-danger"> ultimas unidades!</p>                            
+                      <p class="stock" v-if="juguete.disponibles < 5 " > ultimas unidades!</p>                         
                     </div>               
                 
                 <div class="d-flex justify-content-evenly">

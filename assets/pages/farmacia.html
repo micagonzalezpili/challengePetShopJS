@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetShop | Farmacia</title>
+    <link rel="shortcut icon" href="../img/img/paws.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="../img/img/paws.png" type="image/x-icon">
-    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Quicksand:wght@400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./style/farmacia.css">
 
 </head>
@@ -31,10 +33,10 @@
                     id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active boton4 rounded" aria-current="page" href="./inicio.html">Inicio</a>
+                            <a class="nav-link active boton4 rounded" aria-current="page" href="../../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active boton4 rounded text-bg-danger" aria-current="page"
+                            <a class="nav-link active boton4 rounded" aria-current="page"
                                 href="#">Farmacia</a>
                         </li>
                         <li class="nav-item">
@@ -46,7 +48,7 @@
                                 href="./contacto.html">Contacto</a>
                         </li>
                     </ul>
-                    <img src="../img/img/1170627.png" class="navbar-toggler-icon mw-25 mh-25" type="button">
+                    <a href="./carrito.html"><img src="../img/img/1170627.png" class="navbar-toggler-icon mw-25 mh-25" type="button"></a>
                 </div>
 
             </div>
@@ -69,8 +71,11 @@
                         <h5 class="card-text">{{medicamento.producto}}</h5> 
                         <h5 class="card-text">${{medicamento.precio}}</h5>
                     </div>
-                    <div class="ahref">
-                        <a v-bind:href="'./details.html?_id='+medicamento._id"class="myButton mt-3"class="myButton mt-3">Ver mas</a>     
+                    <div class="ahref d-flex justify-content-evenly">
+                        <a v-bind:href="'./details.html?_id='+medicamento._id"class="myButton mt-3">Ver mas</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="60" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16" >
+                            <path type="button" @click="añadirCarrito(medicamento._id)" d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+                        </svg>     
                     </div>
                 </div>
                 <div >

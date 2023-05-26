@@ -13,7 +13,8 @@ body{
   height: 60%;
 }
 .ahref{
-  height: 20%;
+  height: 38%;
+  min-width: 10rem;
 }
 .card img{
     width: 95%;
